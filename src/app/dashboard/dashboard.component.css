@@ -4,16 +4,167 @@
   min-height: 100%;
 }
 
-
+/* SIDE MENU */
 .side-bar{
-  background-color: #32323d;
+  background-color: #2a3f54;
   width: 220px;
   min-height: 100%;
-  height: calc(100vh - 56px);
+  height: calc(100vh);
+  color: white;
+  position: fixed;
+  -webkit-transition: width 0.5s; /* For Safari 3.1 to 6.0 */
+  transition: width 0.5s;
+  z-index: 999;
+}
+
+.side-bar-hover{
+  position: fixed;
+  z-index: 999;
+  width: 220px;
+}
+
+.app-title .text{
+  position: absolute;
+  left: 80px;
+  top: 11px;
+}
+
+
+.container {
+  height: 100%;
+}
+
+.side-bar-minimize {
+  width: 75px !important;
+}
+
+.side-bar .app-title{
+  max-height: 56px;
+  height: 100%;
+  text-align: center;
+}
+
+.side-bar .app-title .icon{
+  position: absolute;
+  left: 22px;
+}
+
+.side-bar .app-title{
+  max-height: 56px;
+  height: 100%;
+  text-align: center;
+  border-bottom: 1px solid #213444;
+  padding-top: 5px;
+}
+
+.side-bar .app-title .material-icons{
+  font-size: 35px;
+  position: relative;
+  top: 5px;
+}
+
+.side-bar .app-title a{
+  font-size: 25px;
+  margin-top:auto;
+  margin-bottom:auto;
+  margin-left: auto;
+  max-height: 56px;
+  height: 100%;
+  text-align: center;
   color: white;
 }
 
-.main-content{
-  margin-left: auto;
-  margin-right: auto;
+
+
+.menu-list {
+  padding-top: 15px;
+  margin-right: 0;
 }
+.menu-list .open-icon {
+  font-size: 15px;
+  padding-left: 80px;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 0px;
+
+}
+
+.menu-list .open-icon i {
+  font-size: 25px;
+  position: absolute;
+  left: 39px;
+  height: 42px;
+  color: white;
+}
+
+.menu-list .open-icon div{
+  padding-top: 2px;
+}
+
+.not-hidden {
+  transition-delay: 0.5s;
+}
+
+.text-hidden {
+  visibility: hidden;
+}
+
+.menu-active{
+  border-right: 5px solid #1ABB9C;
+  background-color: #213444;
+}
+
+
+
+/* MAIN CONTENT STUFF */
+.main-content{
+  padding-left: 220px;
+  -webkit-transition: padding-left 0.5s; /* For Safari 3.1 to 6.0 */
+  transition: padding-left 0.5s;
+}
+
+.main-content-bigger {
+  padding-left: 75px !important;
+}
+.content-area {
+  padding-left: 50px;
+  padding-top: 65px;
+}
+
+
+/* NAV BAR STYLES */
+nav{
+  position: fixed;
+  width: calc(100% - 220px);
+  -webkit-transition: width 0.5s; /* For Safari 3.1 to 6.0 */
+  transition: width 0.5s;
+}
+
+.nav-bigger{
+  width: calc(100% - 75px);
+}
+
+.navbar-custom{
+  background-color: #ededed;
+  opacity: 1;
+  z-index: 990;
+}
+
+nav .side-menu-icon {
+  color: #4b759e;
+  font-size: 25px;
+}
+
+nav  {
+  color: #4b759e;
+  border-bottom: 1px solid #bcd8f3;
+}
+
+
+nav .side-menu-icon:hover {
+  color: #2a3f54;
+  cursor: pointer;
+}
+
+

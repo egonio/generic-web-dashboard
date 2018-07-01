@@ -6,7 +6,7 @@ import * as ViewModels from './report.viewmodel';
 
 @Injectable()
 export class ReportsService {
-  URL = 'http://192.168.1.100:5000/';
+  URL = 'https://property-app-back-end.herokuapp.com/';
 
 
   reportsChanged = new Subject<ViewModels.Report[]>();
@@ -54,19 +54,20 @@ export class ReportsService {
 constructor(private http: HttpClient) {}
 
 
-private getReportsHTTP() {
-  /*
-  return this.reports.slice();
-  */
+private async getReportsHTTP() {
+  function deserializeReport(report: ViewModels.Report) {
+    const r = {...report};
+
+    r.createdAt = new Date((report.createdAt as any));
+
+    return r;
+  }
   console.log('Get Reports at ' + this.URL + 'api/reports');
-  return this.http.get<ViewModels.Report[]>(this.URL + 'api/reports').toPromise();
+  return (await this.http.get<ViewModels.Report[]>(this.URL + 'api/reports').toPromise()).map(deserializeReport);
 }
 
 async getReports() {
-  console.log('get reports start');
   try {
-    console.log('try starting');
-    console.log( await this.getReportsHTTP());
     this.reports = await this.getReportsHTTP();
     this.reportsChanged.next(this.reports);
     console.log(this.reports);
@@ -74,6 +75,11 @@ async getReports() {
   } catch (error) {
     console.log(error);
   }
+}
+
+async createNewReport(newReport: ViewModels.CreateReport) {
+  await this.http.post(this.URL + 'api/reports', newReport).toPromise();
+  await this.getReports();
 }
 
 /*

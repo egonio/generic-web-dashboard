@@ -17,13 +17,13 @@ export class ReportListComponent implements OnInit {
   constructor(private reportService: ReportsService) {  }
 
   async ngOnInit() {
-    await this.reportService.getReports();
     this.subscription  = this.reportService.reportsChanged
       .subscribe(
         (reports: ViewModels.Report[]) => {
           this.reports = reports;
         }
       );
+    await this.reportService.getReports();
   }
 
 }

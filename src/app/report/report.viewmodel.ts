@@ -9,3 +9,14 @@ export interface Report {
   submitterName: string;
   title: string;
 }
+
+
+export interface CreateReport {
+  apartment: string;
+  description: string;
+  email: string;
+  phoneNumber: string;
+  submitterName: string;
+  title: string;
+  status: string;
+}

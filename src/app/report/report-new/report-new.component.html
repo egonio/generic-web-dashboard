@@ -1,3 +1,39 @@
-<p>
-  report-new works!
-</p>
+<div class="container">
+  <div class="row">
+      <h2>New Report</h2>
+      <form [formGroup]="newReportForm" class="col-md-12" (ngSubmit)="createNewReport()">
+        <div class="form-group">
+          <label class="center-block">Title:
+            <input class="form-control" formControlName="title">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block">Apartment:
+            <input class="form-control" formControlName="apartment">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block">Phone Number:
+            <input class="form-control" formControlName="phoneNumber">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block">Email:
+            <input class="form-control" formControlName="email">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block">Name:
+            <input class="form-control" formControlName="submitterName">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block">Description
+            <textarea class="form-control" formControlName="description">
+              </textarea>
+          </label>
+        </div>
+        <button [disabled]="newReportForm.pristine || !newReportForm.valid" class="btn btn-success" type="submit">Submit</button>
+      </form>
+  </div>
+</div>
