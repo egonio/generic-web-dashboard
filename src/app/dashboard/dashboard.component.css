@@ -1,0 +1,19 @@
+.dashboard {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+
+.side-bar{
+  background-color: #32323d;
+  width: 220px;
+  min-height: 100%;
+  height: calc(100vh - 56px);
+  color: white;
+}
+
+.main-content{
+  margin-left: auto;
+  margin-right: auto;
+}
