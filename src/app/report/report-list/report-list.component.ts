@@ -1,7 +1,7 @@
+import { Router } from '@angular/router';
 import { ReportsService } from './../report.service';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Report } from '../report.model';
 import * as ViewModels from '../report.viewmodel';
 
 @Component({
@@ -14,7 +14,7 @@ export class ReportListComponent implements OnInit {
   reports: ViewModels.Report[];
   subscription: Subscription;
 
-  constructor(private reportService: ReportsService) {  }
+  constructor(private reportService: ReportsService, private router: Router) {  }
 
   async ngOnInit() {
     this.subscription  = this.reportService.reportsChanged
@@ -24,6 +24,10 @@ export class ReportListComponent implements OnInit {
         }
       );
     await this.reportService.getReports();
+  }
+
+  goToDetails (id: string) {
+    this.router.navigate(['/report/detail', id]);
   }
 
 }

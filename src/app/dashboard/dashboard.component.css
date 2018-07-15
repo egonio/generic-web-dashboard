@@ -5,30 +5,31 @@
 }
 
 /* SIDE MENU */
-.side-bar{
+
+.side-bar {
   background-color: #2a3f54;
   width: 220px;
   min-height: 100%;
   height: calc(100vh);
   color: white;
   position: fixed;
-  -webkit-transition: width 0.5s; /* For Safari 3.1 to 6.0 */
+  -webkit-transition: width 0.5s;
+  /* For Safari 3.1 to 6.0 */
   transition: width 0.5s;
   z-index: 999;
 }
 
-.side-bar-hover{
+.side-bar-hover {
   position: fixed;
   z-index: 999;
   width: 220px;
 }
 
-.app-title .text{
+.app-title .text {
   position: absolute;
   left: 80px;
   top: 11px;
 }
-
 
 .container {
   height: 100%;
@@ -38,18 +39,18 @@
   width: 75px !important;
 }
 
-.side-bar .app-title{
+.side-bar .app-title {
   max-height: 56px;
   height: 100%;
   text-align: center;
 }
 
-.side-bar .app-title .icon{
+.side-bar .app-title .icon {
   position: absolute;
   left: 22px;
 }
 
-.side-bar .app-title{
+.side-bar .app-title {
   max-height: 56px;
   height: 100%;
   text-align: center;
@@ -57,16 +58,16 @@
   padding-top: 5px;
 }
 
-.side-bar .app-title .material-icons{
+.side-bar .app-title .material-icons {
   font-size: 35px;
   position: relative;
   top: 5px;
 }
 
-.side-bar .app-title a{
+.side-bar .app-title a {
   font-size: 25px;
-  margin-top:auto;
-  margin-bottom:auto;
+  margin-top: auto;
+  margin-bottom: auto;
   margin-left: auto;
   max-height: 56px;
   height: 100%;
@@ -74,12 +75,11 @@
   color: white;
 }
 
-
-
 .menu-list {
   padding-top: 15px;
   margin-right: 0;
 }
+
 .menu-list .open-icon {
   font-size: 15px;
   padding-left: 80px;
@@ -87,7 +87,6 @@
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 0px;
-
 }
 
 .menu-list .open-icon i {
@@ -98,7 +97,7 @@
   color: white;
 }
 
-.menu-list .open-icon div{
+.menu-list .open-icon div {
   padding-top: 2px;
 }
 
@@ -110,45 +109,56 @@
   visibility: hidden;
 }
 
-.menu-active{
+.menu-active {
   border-right: 5px solid #1ABB9C;
   background-color: #213444;
 }
 
-
-
 /* MAIN CONTENT STUFF */
-.main-content{
+
+.main-content {
   padding-left: 220px;
-  -webkit-transition: padding-left 0.5s; /* For Safari 3.1 to 6.0 */
+  -webkit-transition: padding-left 0.5s;
+  /* For Safari 3.1 to 6.0 */
   transition: padding-left 0.5s;
+  width: 100%;
+  background-color: #F1F1F1;
 }
 
 .main-content-bigger {
   padding-left: 75px !important;
 }
+
 .content-area {
   padding-left: 50px;
   padding-top: 65px;
+  width: 100%;
 }
 
-
 /* NAV BAR STYLES */
-nav{
+
+nav {
   position: fixed;
   width: calc(100% - 220px);
-  -webkit-transition: width 0.5s; /* For Safari 3.1 to 6.0 */
+  -webkit-transition: width 0.5s;
+  /* For Safari 3.1 to 6.0 */
   transition: width 0.5s;
 }
 
-.nav-bigger{
+.nav-bigger {
   width: calc(100% - 75px);
 }
 
-.navbar-custom{
-  background-color: #ededed;
+.navbar-custom {
+  background-color: white;
   opacity: 1;
   z-index: 990;
+  border-bottom: none;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #1C4E80;
+  font-weight: bold;
 }
 
 nav .side-menu-icon {
@@ -156,15 +166,49 @@ nav .side-menu-icon {
   font-size: 25px;
 }
 
-nav  {
+nav {
   color: #4b759e;
   border-bottom: 1px solid #bcd8f3;
 }
-
 
 nav .side-menu-icon:hover {
   color: #2a3f54;
   cursor: pointer;
 }
 
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.navbar-dark .navbar-toggler{
+  border: 2px solid #488A99;
+}
 
+@media (max-width: 991px) {
+
+  .navbar-custom {
+    background-color: #2a3f54;
+  }
+
+  .navbar-dark .navbar-nav .nav-link {
+    color: white;
+  }
+
+  nav {
+    width: 100% !important;
+  }
+  .main-content {
+    padding-left: 0 !important;
+    width: 100% !important;
+  }
+  .nav-bigger {
+    width:100% !important;
+  }
+  .main-content-bigger {
+    padding-left: 0px !important;
+  }
+  .content-area {
+    padding-left: 0 !important;
+    padding-top: 65px;
+    width: 100% !important;
+  }
+}

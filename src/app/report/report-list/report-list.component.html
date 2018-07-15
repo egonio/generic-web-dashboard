@@ -1,20 +1,40 @@
-<button  routerLink="/report/create-new"> Create New </button>
+<button routerLink="/report/create-new"> Create New </button>
 
 
-
-<div class="row">
-  <div class="col-md-12" *ngFor="let report of reports">
-      <p>ID: {{report.id}}</p>
-      <p>Apartment: {{report.apartment}}</p>
-      <p>Description: {{report.description}}</p>
-      <p>Email: {{report.email}}</p>
-      <p>Phone: {{report.phoneNumber}}</p>
-      <p>Status: {{report.status}}</p>
-      <p>Tenant: {{report.submitterName}}</p>
-      <p>Title: {{report.title}}</p>
-      <p>Create At = {{report.createdAt | date}}</p>
-      <hr>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" *ngFor="let report of reports">
+      <div class="report-card">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 img-container col-xs-12" (click)="goToDetails(report.id)">
+              <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" style="object-fit: cover">
+              <div class="image-text">
+                <h4> Apt:  {{report.apartment}} </h4>
+              </div>
+            </div>
+            <div class="col-md-8 col-xs-12" style="padding: 0">
+              <div class="report-card-title">
+                <h5 style="margin-bottom: 0"> {{report.title}}</h5>
+                <p style="margin-bottom: 0">{{report.submitterName}}</p>
+                <p style="margin-bottom: 0">{{report.createdAt | date}}</p>
+              </div>
+              <div class="report-card-body">
+                <div class="report-text">
+                  <p style="display:none">ID: {{report.id}}</p>
+                  <p style="margin-bottom: 0">{{report.description}} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc omni
+                    virtuti vitium contrario nomine opponitur. Tamen a proposito, inquam, aberramus. Sin laboramus, quis
+                    est, qui alienae modum statuat industriae? Itaque nostrum est-quod nostrum dico, artis est-ad ea principia,
+                    quae accepimus. Duo Reges: constructio interrete. Quis animo aequo videt eum, quem inpure ac flagitiose
+                    putet vivere?
+                  </p>
+                  <p style="display:none">Status: {{report.status}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
-

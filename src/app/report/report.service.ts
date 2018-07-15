@@ -62,9 +62,14 @@ private async getReportsHTTP() {
 
     return r;
   }
-  console.log('Get Reports at ' + this.URL + 'api/reports');
   return (await this.http.get<ViewModels.Report[]>(this.URL + 'api/reports').toPromise()).map(deserializeReport);
 }
+
+async getReport(id: string): Promise<ViewModels.Report> {
+  const temp = await (this.http.get<ViewModels.Report>(this.URL + 'api/reports/' + id).toPromise());
+  return temp;
+}
+
 
 async getReports() {
   try {
@@ -82,11 +87,8 @@ async createNewReport(newReport: ViewModels.CreateReport) {
   await this.getReports();
 }
 
-/*
-getReport(id: string) {
-  return this.getReports().find( x => x.id === id);
-}
 
+/*
 updateReport(id: string, status: string) {
   this.reports.find(x => x.id === id).status = status;
   this.reportsChanged.next(this.getReports());
@@ -100,3 +102,4 @@ addNewReport( report: Report) {
 
 
 }
+;
