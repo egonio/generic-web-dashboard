@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Report } from './report.model';
 import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import * as ViewModels from './report.viewmodel';
@@ -101,7 +100,13 @@ private async getReportsHTTP() {
 }
 
 async getReport(id: string): Promise<ViewModels.Report> {
+
+  const temp = await (this.mockReports.find( (element) => {
+    return element.id === id;
+  } ));
+  /* ###### REMOVE THIS COMMENT
   const temp = await (this.http.get<ViewModels.Report>(this.URL + 'api/reports/' + id).toPromise());
+  */
   return temp;
 }
 

@@ -89,6 +89,15 @@
   padding-right: 0px;
 }
 
+.menu-list .open-icon:hover {
+  cursor: pointer;
+}
+
+.menu-list .open-icon:focus{
+  outline: 0;
+  background-color:none;
+}
+
 .menu-list .open-icon i {
   font-size: 25px;
   position: absolute;
@@ -133,6 +142,20 @@
   padding-left: 50px;
   padding-top: 65px;
   width: 100%;
+}
+
+.date-row {
+  width: 100%;
+  color: rgb(131, 131, 131);
+}
+
+.date-row .time{
+  float:right;
+  padding-right: 20px;
+}
+
+.date-row .date {
+  float: left;
 }
 
 /* NAV BAR STYLES */

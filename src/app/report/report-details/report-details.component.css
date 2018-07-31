@@ -1,0 +1,23 @@
+.report .title{
+  text-align: center;
+  background-color: #488A99;
+  color: white;
+  padding: 10px 0;
+}
+
+.report {
+  background-color: white;
+}
+
+.report .images .main-image img{
+  width: 100%;
+}
+
+.thumbnails{
+  height: 150px;
+  overflow: hidden;
+}
+
+.thumbnails img {
+  width: 100%;
+}

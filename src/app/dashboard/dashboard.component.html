@@ -15,19 +15,19 @@
       </div>
 
       <div class="row menu-list">
-        <div class="open-icon col-md-12">
+        <div class="open-icon col-md-12" routerLink="/dashboard" [routerLinkActive]="['menu-active']">
           <i class="material-icons" style="color:cornflowerblue">
             dashboard
           </i>
           <div [ngClass]="{'text-hidden':sideBarMinimized && !sideBarHovering, 'not-hidden':!sideBarMinimized || sideBarHovering}">
-          Dashboard</div>
+            Dashboard</div>
         </div>
-        <div class="open-icon col-md-12 menu-active">
+        <div class="open-icon col-md-12" routerLink="/reports" [routerLinkActive]="['menu-active']">
           <i class="material-icons" style="color:lightblue">
             description
           </i>
           <div [ngClass]="{'text-hidden':sideBarMinimized && !sideBarHovering, 'not-hidden':!sideBarMinimized || sideBarHovering}">
-          Reports</div>
+            Reports</div>
         </div>
 
       </div>
@@ -47,8 +47,8 @@
         </span>
 
 
-        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-          aria-label="Toggle navigation">
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+          aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon" style="color: black"></span>
         </button>
         <div class="collapse navbar-collapse navbar-right" id="navbarNav">
@@ -68,6 +68,12 @@
         </div>
       </nav>
       <div class="content-area">
+        <div class="date-row row">
+          <div class="col-md-12">
+            <p class="date">{{this.date}}</p>
+            <p class="time">{{this.time}}</p>
+          </div>
+        </div>
         <app-main-content></app-main-content>
       </div>
     </div>

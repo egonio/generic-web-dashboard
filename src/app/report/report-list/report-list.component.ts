@@ -27,7 +27,7 @@ export class ReportListComponent implements OnInit {
   }
 
   goToDetails (id: string) {
-    this.router.navigate(['/report/detail', id]);
+    this.router.navigate(['/reports', id]);
   }
 
 }
