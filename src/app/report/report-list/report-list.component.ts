@@ -13,6 +13,9 @@ export class ReportListComponent implements OnInit {
 
   reports: ViewModels.Report[];
   subscription: Subscription;
+  COMPLETED = ViewModels.COMPLETED;
+  INPROGRESS = ViewModels.INPROGRESS;
+  NEW = ViewModels.NEW;
 
   constructor(private reportService: ReportsService, private router: Router) {  }
 
@@ -30,4 +33,7 @@ export class ReportListComponent implements OnInit {
     this.router.navigate(['/reports', id]);
   }
 
+  isCompleted(report: ViewModels.Report) {
+    return report.status === ViewModels.COMPLETED;
+  }
 }

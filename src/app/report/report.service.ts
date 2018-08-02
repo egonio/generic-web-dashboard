@@ -46,7 +46,7 @@ export class ReportsService {
        phoneNumber: '111-222-333',
       email: 'email@email.com',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc omni virtuti vitium contrario nomine opponitur. Tamen a proposito, inquam, aberramus. Sin laboramus, quisest, qui alienae modum statuat industriae? Itaque nostrum est-quod nostrum dico, artis est-ad ea principia,quae accepimus. Duo Reges: constructio interrete. Quis animo aequo videt eum, quem inpure ac flagitiose putet vivere?',
-      status: 'NEW',
+      status: 'INPROGRESS',
       createdAt: new Date(),
     },
     {
@@ -57,7 +57,7 @@ export class ReportsService {
        phoneNumber: '222-333-4567',
       email: 'email@email.com',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc omni virtuti vitium contrario nomine opponitur. Tamen a proposito, inquam, aberramus. Sin laboramus, quisest, qui alienae modum statuat industriae? Itaque nostrum est-quod nostrum dico, artis est-ad ea principia,quae accepimus. Duo Reges: constructio interrete. Quis animo aequo videt eum, quem inpure ac flagitiose putet vivere?',
-      status: 'NEW',
+      status: 'INPROGRESS',
       createdAt: new Date(),
     },
     {
@@ -68,7 +68,7 @@ export class ReportsService {
        phoneNumber: '123-421-3214',
       email: 'email@email.com',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc omni virtuti vitium contrario nomine opponitur. Tamen a proposito, inquam, aberramus. Sin laboramus, quisest, qui alienae modum statuat industriae? Itaque nostrum est-quod nostrum dico, artis est-ad ea principia,quae accepimus. Duo Reges: constructio interrete. Quis animo aequo videt eum, quem inpure ac flagitiose putet vivere?',
-      status: 'NEW',
+      status: 'COMPLETED',
       createdAt: new Date(),
     },
     {
@@ -79,7 +79,7 @@ export class ReportsService {
        phoneNumber: '567-123-4123',
       email: 'email@email.com',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc omni virtuti vitium contrario nomine opponitur. Tamen a proposito, inquam, aberramus. Sin laboramus, quisest, qui alienae modum statuat industriae? Itaque nostrum est-quod nostrum dico, artis est-ad ea principia,quae accepimus. Duo Reges: constructio interrete. Quis animo aequo videt eum, quem inpure ac flagitiose putet vivere?',
-      status: 'NEW',
+      status: 'COMPLETED',
       createdAt: new Date(),
     }
   ];

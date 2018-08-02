@@ -4,20 +4,21 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12" *ngFor="let report of reports">
-      <div class="report-card">
+      <div class="report-card" (click)="goToDetails(report.id)">
         <div class="container">
           <div class="row">
-            <div class="col-md-4 img-container col-xs-12" (click)="goToDetails(report.id)">
+            <div class="col-md-4 img-container col-xs-12"  >
               <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" style="object-fit: cover">
               <div class="image-text">
-                <h4> Apt:  {{report.apartment}} </h4>
+                <h4> Apt:  {{report.apartment}}  </h4>
               </div>
             </div>
-            <div class="col-md-8 col-xs-12" style="padding: 0">
-              <div class="report-card-title">
+            <div class="col-md-8 col-xs-12 " style="padding: 0" >
+              <div class="report-card-title" [ngClass]="{'status-completed': report.status === COMPLETED, 'status-new': report.status ===  NEW, 'status-inprogress': report.status === INPROGRESS}">
                 <h5 style="margin-bottom: 0"> {{report.title}}</h5>
                 <p style="margin-bottom: 0">{{report.submitterName}}</p>
                 <p style="margin-bottom: 0">{{report.createdAt | date}}</p>
+
               </div>
               <div class="report-card-body">
                 <div class="report-text">

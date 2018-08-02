@@ -16,18 +16,20 @@ card {
 .report-card-title,
 .report-card-body {
   padding: 15px;
-  background-color: white;
 }
+
+
 
 .report-card-body {
   border-bottom-right-radius: 5px;
   height: 150px;
+  background-color: white;
+
 }
 
 .report-card-title {
   border-top-right-radius: 5px;
   border-bottom: none;
-  background-color: #488A99;
   color: white;
 }
 

@@ -11,8 +11,8 @@ const appRoutes: Routes = [
   { path: 'dashboard', component: MainDashComponent },
   { path: 'reports', component: ReportComponent,
     children : [
-      { path: '', redirectTo: 'report-list', pathMatch: 'full'},
-      { path: 'report-list', component: ReportListComponent},
+      { path: '', redirectTo: 'list', pathMatch: 'full'},
+      { path: 'list', component: ReportListComponent},
       { path: 'create-new', component: ReportNewComponent },
       { path: ':id', component: ReportDetailsComponent},
      ]

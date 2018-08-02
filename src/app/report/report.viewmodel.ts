@@ -20,3 +20,7 @@ export interface CreateReport {
   title: string;
   status: string;
 }
+
+export const COMPLETED = 'COMPLETED';
+export const NEW = 'NEW';
+export const INPROGRESS = 'INPROGRESS';

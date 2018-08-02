@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+.status-new {
+  background-color: #489443;
+}
+
+.status-inprogress {
+  background-color: #4383a2;
+}
+
+.status-completed {
+  background-color: #8c8989;
+}
+
