@@ -19,6 +19,54 @@ export class ReportDetailsComponent implements OnInit, OnDestroy {
              'https://images.pexels.com/photos/259832/pexels-photo-259832.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
           ];
 
+  comments = [
+    {
+      user:  'John Doe',
+      comment: 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.',
+      date: new Date( (new Date()).getTime() - 1000000 * 100  ),
+    },
+    {
+      user:  'Salmon Ella',
+      comment: 'Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.',
+      date: new Date( (new Date()).getTime() - 100000 * 90  ),
+    },
+    {
+      user:  'Mack Arell',
+      comment: 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.',
+      date: new Date( (new Date()).getTime() - 100000 * 85  ),
+    },
+    {
+      user:  'Mack Arell',
+      comment: 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.',
+      date: new Date( (new Date()).getTime() - 100000 * 65  ),
+    }
+    ,
+    {
+      user:  'Mack Arell',
+      comment: 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.',
+      date: new Date( (new Date()).getTime() - 10000 * 65  ),
+    }
+    ,
+    {
+      user:  'Mack Arell',
+      comment: 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.',
+      date: new Date( (new Date()).getTime() - 10000 * 61  ),
+    }
+    ,
+    {
+      user:  'Mack Arell',
+      comment: 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.',
+      date: new Date( (new Date()).getTime() - 1000 * 60  ),
+    }
+    ,
+    {
+      user:  'Mack Arell',
+      comment: 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.',
+      date: new Date(),
+    }
+  ];
+
+
 
 
   constructor(private route: ActivatedRoute, private reportService: ReportsService) { }
