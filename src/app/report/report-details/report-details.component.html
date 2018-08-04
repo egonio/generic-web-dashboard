@@ -1,52 +1,68 @@
 <div class="row ">
   <!-- Report Details-->
-  <div class='col-lg-6 col-xs-12 report'>
-    <!-- Report Title-->
-    <div class="row title">
-      <div class='col-md-12'>
-        <h3> {{report.title}}</h3>
+  <div class='col-lg-6 col-xs-12'>
+    <div class="report">
+ <!-- Report Title-->
+ <div class="row title">
+    <div class='col-md-12'>
+      <h3> {{report.title}}</h3>
+    </div>
+    <div class='col-md-12'>
+      <div class="left">
+        <p>{{report.submitterName}}</p>
+        <p>{{report.createdAt | date}}</p>
       </div>
-      <div class='col-md-12'>
-        <div class="left">
-          <p>{{report.submitterName}}</p>
-          <p>{{report.createdAt | date}}</p>
-        </div>
-        <div class="right">
-          <p>Apartment: {{report.apartment}}</p>
-          <p>{{report.phoneNumber}}</p>
-        </div>
+      <div class="right">
+        <p>Apartment: {{report.apartment}}</p>
+        <p>{{report.phoneNumber}}</p>
       </div>
     </div>
-    <!-- Report Text-->
-    <div class="row text">
-      <div class="col-md-12">
-        <br>
-        <p> {{report.description}}</p>
-      </div>
+  </div>
+  <!-- Report Text-->
+  <div class="row text">
+    <div class="col-md-12">
+      <br>
+      <p> {{report.description}}</p>
     </div>
-    <!-- Report Images-->
-    <div class="row images">
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col img-container" *ngFor="let image of images; let i = index">
-            <img src="{{image}}" alt="..." class="img-thumbnail" (click)="changeImage(i)" data-toggle="modal" data-target="#picturePreview">
-          </div>
+  </div>
+  <!-- Report Images-->
+  <div class="row images">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col img-container" *ngFor="let image of images; let i = index">
+          <img src="{{image}}" alt="..." class="img-thumbnail" (click)="changeImage(i)" data-toggle="modal" data-target="#picturePreview">
         </div>
       </div>
     </div>
   </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12 buttons">
+            <button type="button" class="btn  btn-outline-primary btn-block"><i class="fa fa-print" aria-hidden="true"></i> Print</button>
+            <button type="button" class="btn btn-outline-success btn-block"><i class="fa fa-check" aria-hidden="true"></i> Mark as Complete</button>
+        </div>
+      </div>
+  </div>
 
   <div class="col-lg-6 col-xs-12 right-side">
-    <div class="row">
-      <div class="col-md-12">
 
-      </div>
-    </div>
     <div class="row">
       <div class="col-md-12 ">
         <div class="comments-container">
-          <div class="comments-section" id="comments" #scrollMe [scrollTop]="scrollMe.scrollHeight">
-            <div class="media" *ngFor="let comment of comments">
+            <div class="add-comment">
+                <form>
+                  <div class="form-group">
+                    <label for="comment">Comment</label>
+                    <textarea name="comment" class="form-control" rows="3"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-default">Send</button>
+                </form>
+              </div>
+              <hr>
+          <div class="comments-section" id="comments" #scrollMe [scrollTop]="scrollMe">
+            <div class="media" *ngFor="let comment of comments.slice().reverse()">
               <img class="mr-3 profile-pic" src="https://pbs.twimg.com/profile_images/740272510420258817/sd2e6kJy.jpg" alt="Generic placeholder image">
               <div class="media-body">
                 <h5 class="mt-0">{{comment.user}}
@@ -59,16 +75,8 @@
             </div>
           </div>
 
-          <hr>
-          <div class="add-comment">
-              <form>
-                  <div class="form-group">
-                    <label for="comment">Comment</label>
-                    <textarea name="comment" class="form-control" rows="3"></textarea>
-                  </div>
-                  <button type="submit" class="btn btn-default">Send</button>
-                </form>
-          </div>
+
+
 
         </div>
       </div>

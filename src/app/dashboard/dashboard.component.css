@@ -93,9 +93,9 @@
   cursor: pointer;
 }
 
-.menu-list .open-icon:focus{
+.menu-list .open-icon:focus {
   outline: 0;
-  background-color:none;
+  background-color: none;
 }
 
 .menu-list .open-icon i {
@@ -133,6 +133,8 @@
   width: 100%;
   background-color: #F1F1F1;
   padding-right: 75px;
+  min-height: 100vh;
+
 }
 
 .main-content-bigger {
@@ -150,8 +152,8 @@
   color: rgb(131, 131, 131);
 }
 
-.date-row .time{
-  float:right;
+.date-row .time {
+  float: right;
   padding-right: 20px;
 }
 
@@ -203,20 +205,18 @@ nav .side-menu-icon:hover {
 .custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
-.navbar-dark .navbar-toggler{
+
+.navbar-dark .navbar-toggler {
   border: 2px solid #488A99;
 }
 
 @media (max-width: 991px) {
-
   .navbar-custom {
     background-color: #2a3f54;
   }
-
   .navbar-dark .navbar-nav .nav-link {
     color: white;
   }
-
   nav {
     width: 100% !important;
   }
@@ -226,7 +226,7 @@ nav .side-menu-icon:hover {
     padding-right: 0px !important;
   }
   .nav-bigger {
-    width:100% !important;
+    width: 100% !important;
   }
   .main-content-bigger {
     padding-left: 0px !important;

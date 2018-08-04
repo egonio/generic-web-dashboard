@@ -23,6 +23,8 @@
   padding-bottom: 30px;
   border-radius: 10px;
   margin-bottom: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .report .images .main-image img{
@@ -50,8 +52,27 @@
   height: 150px;
 }
 
+@media (max-width: 600px){
+  .img-container {
+    flex-basis: initial;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .img-container img{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    max-width: 250px;
+  }
+}
+
+/* MODAL STUFF*/
+
 #picturePreview .modal-dialog{
   max-width: 85vh;
+  margin-top: 100px;
 }
 
 #picturePreview .close{
@@ -72,6 +93,7 @@
 .comments-container {
   background-color: white;
   padding: 20px 15px;;
+  margin-bottom: 20px;
 }
 
 .comments-container .profile-pic{
@@ -127,7 +149,7 @@
 
 #comments::-webkit-scrollbar
 {
-	width: 12px;
+	width: 7px;
 	background-color: #F5F5F5;
 }
 
@@ -137,3 +159,22 @@
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color: #555;
 }
+
+/* Buttons */
+
+.buttons button{
+  background-color: white;
+}
+
+.buttons .btn-outline-primary:hover{
+  background-color: #007bff;
+}
+
+.buttons .btn-outline-success:hover{
+  background-color: #28a745;
+}
+
+.buttons {
+  margin-bottom: 15px;
+}
+
