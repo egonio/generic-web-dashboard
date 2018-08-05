@@ -21,7 +21,6 @@ export class DashboardComponent implements OnInit {
   }
 
   sideBarToggle() {
-    console.log('clicked');
     this.sideBarMinimized = !this.sideBarMinimized;
   }
 

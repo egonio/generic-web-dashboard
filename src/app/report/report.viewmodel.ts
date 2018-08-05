@@ -10,6 +10,19 @@ export interface Report {
   title: string;
 }
 
+export interface ReportUi {
+  id: string;
+  apartment: string;
+  createdAt: Date;
+  description: string;
+  email: string;
+  phoneNumber: string;
+  status: string;
+  submitterName: string;
+  title: string;
+  uiDetailsToggle: boolean;
+}
+
 
 export interface CreateReport {
   apartment: string;

@@ -10,26 +10,38 @@ import * as ViewModels from '../report.viewmodel';
   styleUrls: ['./report-list.component.css']
 })
 export class ReportListComponent implements OnInit {
-
-  reports: ViewModels.Report[];
+  reports: ViewModels.ReportUi[];
   subscription: Subscription;
   COMPLETED = ViewModels.COMPLETED;
   INPROGRESS = ViewModels.INPROGRESS;
   NEW = ViewModels.NEW;
+  showHidden = false;
 
-  constructor(private reportService: ReportsService, private router: Router) {  }
+  constructor(private reportService: ReportsService, private router: Router) {}
 
   async ngOnInit() {
-    this.subscription  = this.reportService.reportsChanged
-      .subscribe(
-        (reports: ViewModels.Report[]) => {
-          this.reports = reports;
-        }
-      );
+    this.subscription = this.reportService.reportsChanged.subscribe(
+      (reports: ViewModels.Report[]) => {
+        this.reports = reports.map(report => {
+          const newObj: ViewModels.ReportUi = {
+            ...report,
+            uiDetailsToggle: false
+          };
+          return newObj;
+        });
+      }
+    );
     await this.reportService.getReports();
   }
 
-  goToDetails (id: string) {
+  uiDetailsToggle(id: string) {
+    const temp = this.reports.find((reportUi) => {
+      return reportUi.id === id;
+    });
+    temp.uiDetailsToggle = !temp.uiDetailsToggle;
+  }
+
+  goToDetails(id: string) {
     this.router.navigate(['/reports', id]);
   }
 

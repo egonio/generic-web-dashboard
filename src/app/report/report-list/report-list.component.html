@@ -4,21 +4,67 @@
 
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-8 report-list" style="padding: 0; border-top: 1px solid lightgray;">
-        <div class="row report" *ngFor="let report of reports"  (click)="goToDetails(report.id)">
-          <div class="media" >
+      <div class="col-md-9 report-list" style="padding: 0; border-top: 1px solid lightgray;">
+        <div class="row report" *ngFor="let report of reports">
+          <div class="media" style="width: 100%">
             <div class="img-container mr-3">
               <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Generic placeholder image">
             </div>
 
             <div class="media-body">
-              <h5 style="margin-bottom: 0"> {{report.title}}
+              <div class="row">
+                <div class="col-md-4 main-info">
+                  <h5 style="margin-bottom: 0"> {{report.title}}
+                  </h5>
+                  <h5 style="margin-bottom: 0; font-weight: 400">{{report.submitterName}}</h5>
+                  <h5 style="margin-bottom: 0; font-weight: 400">{{report.createdAt | date}}</h5>
+                  <h5 style="margin-bottom: 0; font-weight: 400"> Apt: {{report.apartment}} </h5>
+                  <button class="btn toggle" (click)="uiDetailsToggle(report.id)">
+                    <i class="fa fa-chevron-down " [hidden]="report.uiDetailsToggle" aria-hidden="true"></i>
+                    <i class="fa fa-chevron-up" [hidden]="!report.uiDetailsToggle" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="col-md-4 middle-info">
+                  <h5 style="margin-bottom: 0">
+                    <br> </h5>
+                  <h5 style="margin-bottom: 0; font-weight: 400">3 Media Attachment(s)</h5>
+                  <h5 style="margin-bottom: 0; font-weight: 400">10 Comments</h5>
+                  <h5 style="margin-bottom: 0; font-weight: 400">Last updated: {{report.createdAt | date}}</h5>
+                </div>
+                <div class="col-md-4 buttons">
+                  <button type="button" class="btn btn-success">
+                    <h5>
+                      <i class="fa fa-check" aria-hidden="true"></i> Complete </h5>
+                  </button>
+                  <button type="button" class="btn btn-primary" (click)="goToDetails(report.id)">
+                    <h5>
+                      <i class="fa fa-info" aria-hidden="true"></i> Details</h5>
+                  </button>
+                </div>
+              </div>
 
-              </h5>
-              <h5 style="margin-bottom: 0; font-weight: 400">{{report.submitterName}}</h5>
-              <h5 style="margin-bottom: 0; font-weight: 400">{{report.createdAt | date}}</h5>
-              <h5 style="margin-bottom: 0; font-weight: 400"> Apt: {{report.apartment}} </h5>
+            </div>
 
+          </div>
+          <div class="col-md-12 hidden-details" style="text-align: center; width: 100%;"  [hidden]="!report.uiDetailsToggle">
+            <div class=" hidden-middle-info">
+              <h5 style="margin-bottom: 0; font-weight: 400">3 Media Attachment(s)</h5>
+              <h5 style="margin-bottom: 0; font-weight: 400">10 Comments</h5>
+              <h5 style=" font-weight: 400">Last updated: {{report.createdAt | date}}</h5>
+            </div>
+            <div class=" hidden-buttons">
+              <div class="button-container">
+                <button type="button" class="btn btn-success">
+                  <h5>
+                    <i class="fa fa-check" aria-hidden="true"></i> Complete </h5>
+                </button>
+              </div>
+              <div class="button-container">
+                <button type="button" class="btn btn-primary" (click)="goToDetails(report.id)">
+                  <h5>
+                    <i class="fa fa-info" aria-hidden="true"></i> Details</h5>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -57,34 +103,34 @@
       -->
       </div>
 
-      <div class="col-md-4">
-          <div class="row report-track-container">
-              <div class="col-xs-12 col-md-12">
-                <div class=" track-new ">
-                  <h4>
-                    <i class="fa fa-file-text-o status-new" aria-hidden="true"></i> 2
-                    <span class="text">New </span>
-                  </h4>
-                </div>
-              </div>
-              <div class="col-xs-12 col-md-12">
-                <div class="track-inprogress ">
-                  <h4>
-                    <i class="fa fa-hourglass-start status-inprogress" aria-hidden="true"></i> 2
-                    <span class="text">In progress </span>
-                  </h4>
-                </div>
-
-              </div>
-              <div class="col-xs-12 col-md-12">
-                <div class="track-complete ">
-                  <h4>
-                    <i class="fa fa-check status-completed" aria-hidden="true"></i> 2
-                    <span class="text">Completed </span>
-                  </h4>
-                </div>
-              </div>
+      <div class="col-md-3">
+        <div class="row report-track-container">
+          <div class="col-xs-12 col-md-12">
+            <div class=" track-new ">
+              <h4>
+                <i class="fa fa-file-text-o status-new" aria-hidden="true"></i> 2
+                <span class="text">New </span>
+              </h4>
             </div>
+          </div>
+          <div class="col-xs-12 col-md-12">
+            <div class="track-inprogress ">
+              <h4>
+                <i class="fa fa-hourglass-start status-inprogress" aria-hidden="true"></i> 2
+                <span class="text">In progress </span>
+              </h4>
+            </div>
+
+          </div>
+          <div class="col-xs-12 col-md-12">
+            <div class="track-complete ">
+              <h4>
+                <i class="fa fa-check status-completed" aria-hidden="true"></i> 2
+                <span class="text">Completed </span>
+              </h4>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>

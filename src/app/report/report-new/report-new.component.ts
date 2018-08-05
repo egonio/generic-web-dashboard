@@ -29,12 +29,10 @@ export class ReportNewComponent implements OnInit {
     try {
       this.newReport = this.newReportForm.value;
       this.newReport.status = 'New';
-      console.log(this.newReport);
       this.newReportForm.reset();
       this.reportService.createNewReport(this.newReport);
       this.router.navigate(['/report']);
     } catch (error) {
-      console.log(error);
     }
 
 
