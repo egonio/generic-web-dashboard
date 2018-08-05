@@ -2,15 +2,15 @@
 
 
 .status-new {
-  background-color: #489443;
+  background-color: #6AB187;
 }
 
 .status-inprogress {
-  background-color: #4383a2;
+  background-color: #488A99;
 }
 
 .status-completed {
-  background-color: #8c8989;
+  background-color: #484848;
 }
 
 
@@ -92,3 +92,15 @@ h6 {
 	}
 }
 
+.breadcrumb {
+  background-color: white;
+}
+
+.breadcrumb-item a{
+  color:  #DBAE58;
+  font-weight: bold;
+}
+
+.breadcrumb-item.active a {
+  color: #DBAE58;
+}

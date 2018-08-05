@@ -128,10 +128,10 @@
 .main-content {
   padding-left: 220px;
   -webkit-transition: padding-left 0.5s;
-  /* For Safari 3.1 to 6.0 */
+  /* #f6f7fb */
   transition: padding-left 0.5s;
   width: 100%;
-  background-color: #F1F1F1;
+  background-color: #f6f7fb;
   padding-right: 75px;
   min-height: 100vh;
 

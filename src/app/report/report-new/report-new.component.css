@@ -1,0 +1,38 @@
+.report-container, .disclaimer-container {
+  background-color: white;
+  padding: 15px;
+}
+
+
+
+
+.report-container h3 {
+  color: #6AB187;
+}
+
+.report-container label {
+  width: 100%;
+}
+
+.report-section {
+  padding-left: 0px;
+}
+
+.disclaimer-container h5 {
+  font-weight: 400;
+}
+
+.disclaimer-container h4 {
+  color: #AC3E31;
+}
+
+.disclaimer-container p {
+  font-style: italic;
+}
+
+
+@media (max-width: 767px) {
+  .report-section {
+    padding-right: 0;
+  }
+}

@@ -1,41 +1,91 @@
-<button routerLink="/reports/create-new"> Create New </button>
+<div class="container-fluid">
+  <button routerLink="/reports/create-new">
+    <i class="fa fa-file-text" aria-hidden="true"></i> Create New Report</button>
 
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-12" *ngFor="let report of reports">
-      <div class="report-card" (click)="goToDetails(report.id)">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4 img-container col-xs-12"  >
-              <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" style="object-fit: cover">
-              <div class="image-text">
-                <h4> Apt:  {{report.apartment}}  </h4>
-              </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 report-list" style="padding: 0; border-top: 1px solid lightgray;">
+        <div class="row report" *ngFor="let report of reports"  (click)="goToDetails(report.id)">
+          <div class="media" >
+            <div class="img-container mr-3">
+              <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Generic placeholder image">
             </div>
-            <div class="col-md-8 col-xs-12 " style="padding: 0" >
-              <div class="report-card-title" [ngClass]="{'status-completed': report.status === COMPLETED, 'status-new': report.status ===  NEW, 'status-inprogress': report.status === INPROGRESS}">
-                <h5 style="margin-bottom: 0"> {{report.title}}</h5>
-                <p style="margin-bottom: 0">{{report.submitterName}}</p>
-                <p style="margin-bottom: 0">{{report.createdAt | date}}</p>
 
-              </div>
-              <div class="report-card-body">
-                <div class="report-text">
-                  <p style="display:none">ID: {{report.id}}</p>
-                  <p style="margin-bottom: 0">{{report.description}} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc omni
-                    virtuti vitium contrario nomine opponitur. Tamen a proposito, inquam, aberramus. Sin laboramus, quis
-                    est, qui alienae modum statuat industriae? Itaque nostrum est-quod nostrum dico, artis est-ad ea principia,
-                    quae accepimus. Duo Reges: constructio interrete. Quis animo aequo videt eum, quem inpure ac flagitiose
-                    putet vivere?
-                  </p>
-                  <p style="display:none">Status: {{report.status}}</p>
+            <div class="media-body">
+              <h5 style="margin-bottom: 0"> {{report.title}}
+
+              </h5>
+              <h5 style="margin-bottom: 0; font-weight: 400">{{report.submitterName}}</h5>
+              <h5 style="margin-bottom: 0; font-weight: 400">{{report.createdAt | date}}</h5>
+              <h5 style="margin-bottom: 0; font-weight: 400"> Apt: {{report.apartment}} </h5>
+
+            </div>
+          </div>
+        </div>
+
+
+        <!--
+        <div *ngFor="let report of reports">
+          <div class="report-card" (click)="goToDetails(report.id)">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4 img-container col-xs-12">
+                  <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" style="object-fit: cover">
+                  <div class="image-text">
+                    <h4> Apt: {{report.apartment}} </h4>
+                  </div>
+                </div>
+                <div class="col-md-8 col-xs-12 " style="padding: 0">
+                  <!--  [ngClass]="{'status-completed': report.status === COMPLETED, 'status-new': report.status ===  NEW, 'status-inprogress': report.status === INPROGRESS}"
+                  <div class="report-card-title">
+                    <h4 style="margin-bottom: 0"> {{report.title}}</h4>
+                    <h5 style="margin-bottom: 0">{{report.submitterName}}</h5>
+                    <h5 style="margin-bottom: 0">{{report.createdAt | date}}</h5>
+                    <hr style="margin-bottom: 0">
+                  </div>
+                  <div class="report-card-body" style="padding-top: 0">
+                    <div class="report-text">
+                      <p style="display:none">ID: {{report.id}}</p>
+                      <p style="display:none">Status: {{report.status}}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      -->
+      </div>
+
+      <div class="col-md-4">
+          <div class="row report-track-container">
+              <div class="col-xs-12 col-md-12">
+                <div class=" track-new ">
+                  <h4>
+                    <i class="fa fa-file-text-o status-new" aria-hidden="true"></i> 2
+                    <span class="text">New </span>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-12">
+                <div class="track-inprogress ">
+                  <h4>
+                    <i class="fa fa-hourglass-start status-inprogress" aria-hidden="true"></i> 2
+                    <span class="text">In progress </span>
+                  </h4>
+                </div>
+
+              </div>
+              <div class="col-xs-12 col-md-12">
+                <div class="track-complete ">
+                  <h4>
+                    <i class="fa fa-check status-completed" aria-hidden="true"></i> 2
+                    <span class="text">Completed </span>
+                  </h4>
+                </div>
+              </div>
+            </div>
+
       </div>
     </div>
   </div>
-</div>

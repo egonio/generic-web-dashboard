@@ -2,8 +2,6 @@
   background-color: #488A99;
   color: white;
   padding: 10px 0;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
 }
 .report .title p{
   margin:0;
@@ -21,7 +19,6 @@
 .report {
   background-color: white;
   padding-bottom: 30px;
-  border-radius: 10px;
   margin-bottom: 30px;
   padding-left: 15px;
   padding-right: 15px;
@@ -121,7 +118,6 @@
   padding-top: 15px;
   padding-left: 15px;
   padding-right: 15px;
-  border-radius: 7px;
   box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
 }
 
@@ -143,7 +139,6 @@
 #comments::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
 	background-color: #F5F5F5;
 }
 
@@ -155,7 +150,6 @@
 
 #comments::-webkit-scrollbar-thumb
 {
-	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color: #555;
 }
