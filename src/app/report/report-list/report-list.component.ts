@@ -16,10 +16,16 @@ export class ReportListComponent implements OnInit {
   INPROGRESS = ViewModels.INPROGRESS;
   NEW = ViewModels.NEW;
   showHidden = false;
+  filters = {
+    new: true,
+    inprogress: false,
+    completed: false
+  };
 
   constructor(private reportService: ReportsService, private router: Router) {}
 
   async ngOnInit() {
+    console.log(this.filters.new);
     this.subscription = this.reportService.reportsChanged.subscribe(
       (reports: ViewModels.Report[]) => {
         this.reports = reports.map(report => {
@@ -35,10 +41,14 @@ export class ReportListComponent implements OnInit {
   }
 
   uiDetailsToggle(id: string) {
-    const temp = this.reports.find((reportUi) => {
+    const temp = this.reports.find(reportUi => {
       return reportUi.id === id;
     });
     temp.uiDetailsToggle = !temp.uiDetailsToggle;
+  }
+
+  changeFilter(filter: string) {
+    this.filters[filter] = !this.filters[filter];
   }
 
   goToDetails(id: string) {

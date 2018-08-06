@@ -111,19 +111,65 @@ card {
 }
 
 
+/* FILTERS */
+
+.filter li {
+  border-color: #DBAE58;
+  background-color: rgb(252, 244, 229);
+  border-radius: 0;
+}
+
+.filter .list-group-item{
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.filter li:hover {
+  cursor:pointer;
+}
+.filter li  {
+  font-weight: bold;
+  color: #a06900;
+}
+
+.filter li.active  {
+  font-weight: bold;
+  color: white;
+  background-color: #DBAE58;
+}
+
+.filter li.active i  {
+  font-weight: bold;
+  color: #865700;
+}
+
+
+.filter li i {
+  color: #DBAE58;
+  padding-right: 10px;
+}
+
+
+
 /* REPORT LIST */
 
 .report-list {
-  background-color: white;
+ /*  background-color: white; */
   padding-left: 15px !important;
   padding-right: 15px !important;
+
 }
 
 .report {
-  border-bottom: 1px solid lightgray;
+ /* border-bottom: 1px solid lightgray; */
+ background-color: white;
+ margin-bottom: 12px;
+ box-shadow: 0 0 5px lightgray;
+ border: 1px solid rgb(201, 201, 201);
 }
 .media .img-container{
   padding: 10px;
+
 }
 .report .media img {
   height: 100px;
@@ -142,7 +188,7 @@ card {
 
 .report .media .buttons button {
   float:right;
-  width: 150px;
+  width: 200px;
   margin:  5px 0;
   background-color: white;
   height: 40px;
@@ -161,7 +207,7 @@ card {
   margin-bottom:  10px !important;
   background-color: white;
   height: 40px;
-  max-width: 200px;
+  max-width: 350px;
   margin: auto;
 }
 

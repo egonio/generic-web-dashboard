@@ -1,10 +1,10 @@
 <div class="container-fluid">
-  <button routerLink="/reports/create-new">
-    <i class="fa fa-file-text" aria-hidden="true"></i> Create New Report</button>
+  <h2 style="margin-bottom: 0.5em">Reports</h2>
+
 
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-9 report-list" style="padding: 0; border-top: 1px solid lightgray;">
+      <div class="col-md-9 report-list" style="padding: 0;">
         <div class="row report" *ngFor="let report of reports">
           <div class="media" style="width: 100%">
             <div class="img-container mr-3">
@@ -34,11 +34,11 @@
                 <div class="col-md-4 buttons">
                   <button type="button" class="btn btn-success">
                     <h5>
-                      <i class="fa fa-check" aria-hidden="true"></i> Complete </h5>
+                     Mark as Completed  </h5>
                   </button>
                   <button type="button" class="btn btn-primary" (click)="goToDetails(report.id)">
                     <h5>
-                      <i class="fa fa-info" aria-hidden="true"></i> Details</h5>
+                       Show Details</h5>
                   </button>
                 </div>
               </div>
@@ -46,7 +46,7 @@
             </div>
 
           </div>
-          <div class="col-md-12 hidden-details" style="text-align: center; width: 100%;"  [hidden]="!report.uiDetailsToggle">
+          <div class="col-md-12 hidden-details" style="text-align: center; width: 100%;" [hidden]="!report.uiDetailsToggle">
             <div class=" hidden-middle-info">
               <h5 style="margin-bottom: 0; font-weight: 400">3 Media Attachment(s)</h5>
               <h5 style="margin-bottom: 0; font-weight: 400">10 Comments</h5>
@@ -56,13 +56,13 @@
               <div class="button-container">
                 <button type="button" class="btn btn-success">
                   <h5>
-                    <i class="fa fa-check" aria-hidden="true"></i> Complete </h5>
+                   Mark as Completed </h5>
                 </button>
               </div>
               <div class="button-container">
                 <button type="button" class="btn btn-primary" (click)="goToDetails(report.id)">
                   <h5>
-                    <i class="fa fa-info" aria-hidden="true"></i> Details</h5>
+                    Show Details</h5>
                 </button>
               </div>
             </div>
@@ -104,6 +104,29 @@
       </div>
 
       <div class="col-md-3">
+        <h5> FILTER</h5>
+        <ul class="list-group filter">
+          <li class="list-group-item  filter-new" [ngClass]="{'active': filters.new}" (click)="changeFilter('new')">
+            <h5>
+              <i class="fa fa-plus" aria-hidden="true" [hidden]="filters.new"></i>
+              <i class="fa fa-check" aria-hidden="true" [hidden]="!filters.new"></i>
+
+              New (5) </h5>
+          </li>
+          <li class="list-group-item filter-inprogress" [ngClass]="{'active': filters.inprogress}" (click)="changeFilter('inprogress')">
+            <h5>
+              <i class="fa fa-plus" aria-hidden="true" [hidden]="filters.inprogress"></i>
+              <i class="fa fa-check" aria-hidden="true" [hidden]="!filters.inprogress"></i>
+              In Progress (5) </h5>
+          </li>
+          <li class="list-group-item filter-completed" [ngClass]="{'active': filters.completed}" (click)="changeFilter('completed')">
+            <h5>
+              <i class="fa fa-plus" aria-hidden="true" [hidden]="filters.completed"></i>
+              <i class="fa fa-check" aria-hidden="true" [hidden]="!filters.completed"></i>Completed (5) </h5>
+          </li>
+        </ul>
+        <br>
+        <!--
         <div class="row report-track-container">
           <div class="col-xs-12 col-md-12">
             <div class=" track-new ">
@@ -130,8 +153,11 @@
               </h4>
             </div>
           </div>
-        </div>
-
+          -->
+        <button routerLink="/reports/create-new">
+          <i class="fa fa-file-text" aria-hidden="true"></i> Create New Report</button>
       </div>
+
     </div>
   </div>
+</div>
