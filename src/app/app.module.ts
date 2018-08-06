@@ -1,3 +1,4 @@
+import { UploadDetailsService } from './services/upload-details.service';
 import { ReportsService } from './report/report.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -34,7 +35,7 @@ import { MainDashComponent } from './main-dash/main-dash.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [ReportsService],
+  providers: [ReportsService, UploadDetailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

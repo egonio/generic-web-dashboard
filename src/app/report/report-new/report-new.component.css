@@ -3,8 +3,10 @@
   padding: 15px;
 }
 
-
-
+.report-section {
+  box-shadow: 0 0 3px  lightgray;
+  background-color: white;
+}
 
 .report-container h3 {
   color: #6AB187;
@@ -16,6 +18,10 @@
 
 .report-section {
   padding-left: 0px;
+}
+
+.report-container form .submit-container {
+  text-align: right;
 }
 
 .disclaimer-container h5 {
@@ -30,9 +36,43 @@
   font-style: italic;
 }
 
+.disclaimer-section{
+  padding: 0;
+}
+
+/* Photo section */
+.photos-section{
+  padding: 15px;
+}
+.photo-container{
+  background-color: gray;
+  height: 250px;
+  overflow: hidden;
+}
+
+.photo-container img{
+  object-fit: cover;
+
+}
+
+
 
 @media (max-width: 767px) {
   .report-section {
     padding-right: 0;
   }
+
+  .disclaimer-section{
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 991px) {
+  .disclaimer-section{
+    margin-top: 15px;
+  }
+  .report-section {
+    padding-right: 0;
+  }
+
 }

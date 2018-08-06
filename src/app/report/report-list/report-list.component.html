@@ -9,6 +9,9 @@
           <div class="media" style="width: 100%">
             <div class="img-container mr-3">
               <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Generic placeholder image">
+              <div class="report-status" [ngClass]="{'status-completed': report.status === COMPLETED, 'status-new': report.status ===  NEW, 'status-ongoing': report.status === ONGOING}">
+                <h6 style="margin:0"> {{report.status }}</h6>
+              </div>
             </div>
 
             <div class="media-body">
@@ -34,11 +37,11 @@
                 <div class="col-md-4 buttons">
                   <button type="button" class="btn btn-success">
                     <h5>
-                     Mark as Completed  </h5>
+                      Mark as Completed </h5>
                   </button>
                   <button type="button" class="btn btn-primary" (click)="goToDetails(report.id)">
                     <h5>
-                       Show Details</h5>
+                      Show Details</h5>
                   </button>
                 </div>
               </div>
@@ -56,7 +59,7 @@
               <div class="button-container">
                 <button type="button" class="btn btn-success">
                   <h5>
-                   Mark as Completed </h5>
+                    Mark as Completed </h5>
                 </button>
               </div>
               <div class="button-container">
@@ -68,39 +71,6 @@
             </div>
           </div>
         </div>
-
-
-        <!--
-        <div *ngFor="let report of reports">
-          <div class="report-card" (click)="goToDetails(report.id)">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-4 img-container col-xs-12">
-                  <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" style="object-fit: cover">
-                  <div class="image-text">
-                    <h4> Apt: {{report.apartment}} </h4>
-                  </div>
-                </div>
-                <div class="col-md-8 col-xs-12 " style="padding: 0">
-                  <!--  [ngClass]="{'status-completed': report.status === COMPLETED, 'status-new': report.status ===  NEW, 'status-inprogress': report.status === INPROGRESS}"
-                  <div class="report-card-title">
-                    <h4 style="margin-bottom: 0"> {{report.title}}</h4>
-                    <h5 style="margin-bottom: 0">{{report.submitterName}}</h5>
-                    <h5 style="margin-bottom: 0">{{report.createdAt | date}}</h5>
-                    <hr style="margin-bottom: 0">
-                  </div>
-                  <div class="report-card-body" style="padding-top: 0">
-                    <div class="report-text">
-                      <p style="display:none">ID: {{report.id}}</p>
-                      <p style="display:none">Status: {{report.status}}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      -->
       </div>
 
       <div class="col-md-3">
@@ -113,11 +83,11 @@
 
               New (5) </h5>
           </li>
-          <li class="list-group-item filter-inprogress" [ngClass]="{'active': filters.inprogress}" (click)="changeFilter('inprogress')">
+          <li class="list-group-item filter-ongoing" [ngClass]="{'active': filters.ongoing}" (click)="changeFilter('ongoing')">
             <h5>
-              <i class="fa fa-plus" aria-hidden="true" [hidden]="filters.inprogress"></i>
-              <i class="fa fa-check" aria-hidden="true" [hidden]="!filters.inprogress"></i>
-              In Progress (5) </h5>
+              <i class="fa fa-plus" aria-hidden="true" [hidden]="filters.ongoing"></i>
+              <i class="fa fa-check" aria-hidden="true" [hidden]="!filters.ongoing"></i>
+              Ongoing (5) </h5>
           </li>
           <li class="list-group-item filter-completed" [ngClass]="{'active': filters.completed}" (click)="changeFilter('completed')">
             <h5>

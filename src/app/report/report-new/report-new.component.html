@@ -1,7 +1,8 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
-      <a routerLink="/reports"> <i class="fa fa-file-text" aria-hidden="true"></i> Report List</a>
+      <a routerLink="/reports">
+        <i class="fa fa-file-text" aria-hidden="true"></i> Report List</a>
     </li>
     <li class="breadcrumb-item active" aria-current="page">New Report</li>
   </ol>
@@ -9,10 +10,10 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-8 report-section">
+    <div class="col-lg-8  report-section">
       <div class="report-container">
-        <h3>  Create new report</h3>
         <form [formGroup]="newReportForm" class="col-md-12" (ngSubmit)="createNewReport()">
+          <h3> Create new report</h3>
           <div class="form-group">
             <label class="center-block">Title:
               <input class="form-control" formControlName="title">
@@ -44,20 +45,46 @@
               </textarea>
             </label>
           </div>
-          <button [disabled]="newReportForm.pristine || !newReportForm.valid" class="btn btn-success" type="submit">Submit</button>
+          <div class="form-group" class="submit-container">
+            <button  [disabled]="newReportForm.pristine || !newReportForm.valid" class="btn btn-success" type="submit">Submit</button>
+          </div>
+
         </form>
       </div>
+      <div class="photos-section">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="photo-container">
+              <img src="{{imagePreview}}">
+            </div>
+            <label class="btn btn-primary">
+                Upload Media <input type="file"  accept="image/*"hidden (change)="onChooseMedia($event)">
+            </label>
+            <label class="btn btn-success" (click)="uploadToB2()">
+                Upload
+                <button hidden > </button>
+            </label>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-md-4 disclaimer-section">
+
+
+    <div class="col-lg-4 disclaimer-section">
       <div class="disclaimer-container">
         <h4>
           <i class="fa fa-exclamation-circle" aria-hidden="true"></i> In case of emergency, please contact:</h4>
-        <h5><strong>Building Manager </strong></h5>
+        <h5>
+          <strong>Building Manager </strong>
+        </h5>
         <h5>John Doe: 123-456-7890</h5>
-        <h5> <strong> Superintendent </strong></h5>
+        <h5>
+          <strong> Superintendent </strong>
+        </h5>
         <h5>John Doe: 123-456-7890</h5>
         <h5>John Doe: 123-456-7890</h5>
-        <p> Duo Reges: constructio interrete. Quod ea non occurrentia fingunt, vincunt Aristonem; Isto modo, ne si avia quidem eius nata non esset. An haec ab eo non dicuntur? Ita multa dicunt, quae vix intellegam. Tria genera bonorum; </p>
+        <p> Duo Reges: constructio interrete. Quod ea non occurrentia fingunt, vincunt Aristonem; Isto modo, ne si avia quidem
+          eius nata non esset. An haec ab eo non dicuntur? Ita multa dicunt, quae vix intellegam. Tria genera bonorum; </p>
       </div>
     </div>
   </div>

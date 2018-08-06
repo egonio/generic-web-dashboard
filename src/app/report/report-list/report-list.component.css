@@ -1,116 +1,3 @@
-/*
-card {
-  margin-top: 10px;
-}
-
-.report-card {
-  margin-bottom: 15px;
-  max-height: 250px;
-  overflow: hidden;
-  box-shadow: 0 0 3px #aab4c2;
-}
-
-.report-card:hover {
-  box-shadow: 0 0 10px #484848;
-  cursor: pointer;
-}
-
-.report-card-title,
-.report-card-body {
-  padding: 15px;
-}
-
-.report-card-body {
-  height: 155px;
-  background-color: white;
-}
-
-.report-card-title {
-  border-bottom: none;
-  color: rgb(48, 48, 48);
-  background-color: white;
-}
-
-.report-card .img-container {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  overflow: hidden;
-}
-
-.report-card .image-text {
-  position: relative;
-  top: -40px;
-  text-align: center;
-  color: white;
-  background-color: rgba(20, 20, 20, 0.8);
-  height: 40px;
-  margin-bottom: -40px;
-}
-
-.report-card .img-container img {
-  height: 250px;
-}
-
-
-
-@media (max-width: 767px) {
-  .report-card {
-    max-height: none;
-  }
-  .report-card .img-container img {
-    height: 200px;
-    width: 100%;
-  }
-
-  .report-card-body {
-    max-height: 140px;
-    overflow: hidden;
-  }
-}
-*/
-
-/* Report Tracker*/
-
-.report-track-container {
-  text-align: center;
-  padding: 10px 0;
-}
-
-.track-new,
-.track-inprogress,
-.track-complete {
-  padding: 20px;
-  background-color: transparent;
-}
-
-.track-new {
-  color: #6AB187;
-}
-
-.track-inprogress {
-  color: #4383a2;
-}
-
-.track-complete {
-  color: #484848
-}
-
-.track-new .fa,
-.track-inprogress .fa,
-.track-complete .fa {
-  color: white;
-  padding: 15px;
-  border-radius: 50%;
-}
-
-.track-new .text,
-.track-inprogress .text,
-.track-complete .text {
-  font-size: 20px;
-}
-
-
 /* FILTERS */
 
 .filter li {
@@ -119,64 +6,62 @@ card {
   border-radius: 0;
 }
 
-.filter .list-group-item{
+.filter .list-group-item {
   margin-bottom: 10px;
   border-radius: 5px;
 }
 
 .filter li:hover {
-  cursor:pointer;
+  cursor: pointer;
 }
-.filter li  {
+
+.filter li {
   font-weight: bold;
   color: #a06900;
 }
 
-.filter li.active  {
+.filter li.active {
   font-weight: bold;
   color: white;
   background-color: #DBAE58;
 }
 
-.filter li.active i  {
+.filter li.active i {
   font-weight: bold;
   color: #865700;
 }
-
 
 .filter li i {
   color: #DBAE58;
   padding-right: 10px;
 }
 
-
-
 /* REPORT LIST */
 
 .report-list {
- /*  background-color: white; */
+  /*  background-color: white; */
   padding-left: 15px !important;
   padding-right: 15px !important;
-
 }
 
 .report {
- /* border-bottom: 1px solid lightgray; */
- background-color: white;
- margin-bottom: 12px;
- box-shadow: 0 0 5px lightgray;
- border: 1px solid rgb(201, 201, 201);
+  /* border-bottom: 1px solid lightgray; */
+  background-color: white;
+  margin-bottom: 12px;
+  box-shadow: 0 0 5px lightgray;
+  border: 1px solid rgb(201, 201, 201);
 }
-.media .img-container{
-  padding: 10px;
 
+.media .img-container {
+  padding: 10px;
 }
+
 .report .media img {
   height: 100px;
   display: flex;
 }
 
-.report .media .media-body{
+.report .media .media-body {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 10px;
@@ -187,24 +72,21 @@ card {
 }
 
 .report .media .buttons button {
-  float:right;
+  float: right;
   width: 200px;
-  margin:  5px 0;
+  margin: 5px 0;
   background-color: white;
   height: 40px;
 }
-
 
 .report .hidden-middle-info {
   color: gray;
   margin-bottom: 10px;
 }
 
-
-
 .report .hidden-buttons button {
   width: 100%;
-  margin-bottom:  10px !important;
+  margin-bottom: 10px !important;
   background-color: white;
   height: 40px;
   max-width: 350px;
@@ -217,11 +99,12 @@ card {
   flex: 0 0 100%;
 }
 
-
-.report  .btn-success {
+.report .btn-success {
   color: #28a745;
 }
-.report .media button.btn-success:hover, .report .hidden-buttons .btn-success:hover{
+
+.report .media button.btn-success:hover,
+.report .hidden-buttons .btn-success:hover {
   background-color: #28a745;
   color: white;
 }
@@ -230,44 +113,59 @@ card {
   color: #007bff;
 }
 
-.report  .media button.btn-primary:hover, .report .hidden-buttons .btn-primary:hover  {
+.report .media button.btn-primary:hover,
+.report .hidden-buttons .btn-primary:hover {
   background-color: #007bff;
   color: white;
 }
 
-.report  .main-info .toggle{
+.report .main-info .toggle {
   position: absolute;
   top: 40%;
   right: 20px;
-  display:none;
+  display: none;
 }
 
 .report .hidden-details {
   transition: all .3s;
-  display:none;
+  display: none;
 }
 
 .report .show-details {
   display: initial;
 }
-@media (max-width: 1400px) {
-  .report .media .middle-info, .report .media .buttons{
-    display:none;
-  }
 
+.report-status {
+  color: white;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  position: relative;
+  bottom: 15px;
+  margin-bottom: -15px;
+}
+
+@media (max-width: 1400px) {
+  .report .media .middle-info,
+  .report .media .buttons {
+    display: none;
+  }
   .report .media .main-info {
     width: 100%;
     max-width: 100%;
     flex: 0 0 100%;
   }
-
-  .report .media .main-info .toggle{
+  .report .media .main-info .toggle {
     display: initial;
   }
-
   .report .hidden-details {
     display: initial;
   }
+}
 
-
+@media (max-width: 500px) {
+  .report .media img {
+    height: 50px;
+    display: flex;
+  }
 }

@@ -1,5 +1,4 @@
 .report .title{
-  background-color: #488A99;
   color: white;
   padding: 10px 0;
 }
@@ -68,7 +67,7 @@
 /* MODAL STUFF*/
 
 #picturePreview .modal-dialog{
-  max-width: 85vh;
+  max-width: 85vw;
   margin-top: 100px;
 }
 

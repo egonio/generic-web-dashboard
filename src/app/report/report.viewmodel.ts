@@ -36,4 +36,4 @@ export interface CreateReport {
 
 export const COMPLETED = 'COMPLETED';
 export const NEW = 'NEW';
-export const INPROGRESS = 'INPROGRESS';
+export const ONGOING = 'ONGOING';

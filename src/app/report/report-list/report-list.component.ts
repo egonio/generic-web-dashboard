@@ -13,12 +13,12 @@ export class ReportListComponent implements OnInit {
   reports: ViewModels.ReportUi[];
   subscription: Subscription;
   COMPLETED = ViewModels.COMPLETED;
-  INPROGRESS = ViewModels.INPROGRESS;
+  ONGOING = ViewModels.ONGOING;
   NEW = ViewModels.NEW;
   showHidden = false;
   filters = {
     new: true,
-    inprogress: false,
+    ongoing: false,
     completed: false
   };
 

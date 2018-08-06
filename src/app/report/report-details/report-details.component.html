@@ -1,7 +1,8 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
-      <a routerLink="/reports"><i class="fa fa-file-text" aria-hidden="true"></i>  Report List</a>
+      <a routerLink="/reports">
+        <i class="fa fa-file-text" aria-hidden="true"></i> Report List</a>
     </li>
     <li class="breadcrumb-item active" aria-current="page">Report Detail</li>
   </ol>
@@ -12,9 +13,9 @@
   <div class='col-lg-6 col-xs-12'>
     <div class="report">
       <!-- Report Title-->
-      <div class="row title">
+      <div class="row title" [ngClass]="{'status-completed': report.status === 'COMPLETED', 'status-new': report.status ===  'NEW', 'status-ongoing': report.status === 'ONGOING'}">
         <div class='col-md-12'>
-          <h3> {{report.title}}</h3>
+          <h3 > {{report.title}}</h3>
         </div>
         <div class='col-md-12'>
           <div class="left">
