@@ -16,6 +16,7 @@ export class ReportListComponent implements OnInit {
   ONGOING = ViewModels.ONGOING;
   NEW = ViewModels.NEW;
   showHidden = false;
+  imageURLConfig;
   filters = {
     new: true,
     ongoing: false,
@@ -25,19 +26,23 @@ export class ReportListComponent implements OnInit {
   constructor(private reportService: ReportsService, private router: Router) {}
 
   async ngOnInit() {
-    console.log(this.filters.new);
     this.subscription = this.reportService.reportsChanged.subscribe(
       (reports: ViewModels.Report[]) => {
         this.reports = reports.map(report => {
           const newObj: ViewModels.ReportUi = {
             ...report,
-            uiDetailsToggle: false
+            uiDetailsToggle: false,
+            numberOfImages: report.mediaAttachments.length
           };
           return newObj;
         });
       }
     );
     await this.reportService.getReports();
+    const temp = await this.reportService.getConfig() as { b2ApiDownloadFileByIdBaseUrl: string }
+    this.imageURLConfig = temp.b2ApiDownloadFileByIdBaseUrl;
+    console.log(this.reports);
+
   }
 
   uiDetailsToggle(id: string) {

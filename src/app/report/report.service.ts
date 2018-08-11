@@ -14,7 +14,7 @@ export class ReportsService {
   reportsChanged = new Subject<ViewModels.Report[]>();
 
   private reports: ViewModels.Report[];
-
+  /*
   private mockReports: ViewModels.Report[] = [
     {
       id: '1',
@@ -89,7 +89,7 @@ export class ReportsService {
       createdAt: new Date()
     }
   ];
-
+ */
   constructor(private http: HttpClient) {}
 
   private async getReportsHTTP() {
@@ -104,6 +104,7 @@ export class ReportsService {
       .get<ViewModels.Report[]>(this.URL + '/reports')
       .toPromise()).map(deserializeReport);
   }
+
 
   async getReport(id: string): Promise<ViewModels.Report> {
     /*
@@ -125,32 +126,58 @@ export class ReportsService {
     try {
       this.reports = await this.getReportsHTTP();
       this.reportsChanged.next(this.reports);
-      console.log(this.reports);
     } catch (error) {
       console.log(error);
     }
   }
 
   async createNewReport(newReport: ViewModels.CreateReport) {
-    await this.http.post(this.URL + '/reports', newReport).toPromise();
+    const temp = await this.http
+      .post(this.URL + '/reports', newReport)
+      .toPromise();
     await this.getReports();
+    return temp;
   }
 
   async uploadToB2(
     uploadDetails: UploadDetailsViewModels.UploadDetails,
     imageFile: any,
-    hash: any ) {
-    return this.http.post(
-      'https://property-app-b2-emulator.herokuapp.com/api/b2_upload_file',
-      imageFile,
-      {
-      headers: new HttpHeaders({
-        'Content-Type': 'image/png',
-        Authorization: uploadDetails.authorizationToken,
-        'X-Bz-File-Name': imageFile.name,
-        'X-Bz-Content-Sha1': hash
+    hash: any
+  ) {
+    return this.http
+      .post(
+        'https://property-app-b2-emulator.herokuapp.com/api/b2_upload_file',
+        imageFile,
+        {
+          headers: new HttpHeaders({
+            'Content-Type': 'image/png',
+            Authorization: uploadDetails.authorizationToken,
+            'X-Bz-File-Name': imageFile.name,
+            'X-Bz-Content-Sha1': hash
+          })
+        }
+      )
+      .toPromise();
+  }
+
+  async uploadImageForReport(
+    id: string,
+    type: string,
+    imageName: string,
+    imageFile: any
+  ) {
+    return this.http
+      .post(this.URL + '/reports/' + id + '/media-attachments', imageFile, {
+        headers: new HttpHeaders({
+          'Content-Type': type,
+          'x-pa-file-name': imageName
+        })
       })
-    }).toPromise();
+      .toPromise();
+  }
+
+  async getConfig() {
+    return await this.http.get(this.URL + '/config').toPromise() as { b2ApiDownloadFileByIdBaseUrl: string };
   }
 
   /*

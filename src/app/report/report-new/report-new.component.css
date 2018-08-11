@@ -37,7 +37,7 @@
 }
 
 .disclaimer-section{
-  padding: 0;
+  padding-right: 0;
 }
 
 /* Photo section */
@@ -70,6 +70,7 @@
 @media (max-width: 991px) {
   .disclaimer-section{
     margin-top: 15px;
+    padding: 0;
   }
   .report-section {
     padding-right: 0;

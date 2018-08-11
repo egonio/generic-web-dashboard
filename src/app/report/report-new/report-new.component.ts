@@ -21,6 +21,10 @@ export class ReportNewComponent implements OnInit {
   imageFile;
   imagePreview;
   uploadDetails;
+  reportID ;
+  imageType;
+  imageName;
+
 
   ngOnInit() {
     this.newReportForm = new FormGroup({
@@ -31,29 +35,29 @@ export class ReportNewComponent implements OnInit {
       email: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required)
     });
-    this.getUploadDetails();
+    //this.getUploadDetails();
   }
 
-  createNewReport() {
+  async createNewReport() {
     try {
       this.newReport = this.newReportForm.value;
       this.newReport.status = 'NEW';
-      this.reportService.createNewReport(this.newReport);
+      const temp = await this.reportService.createNewReport(this.newReport) as { newId: string };
+      this.reportID = temp.newId;
       this.newReportForm.reset();
-      this.router.navigate(['/reports']);
+      console.log(this.reportID);
     } catch (error) {}
   }
 
   onChooseMedia(event: any) {
-
     const reader = new FileReader();
     reader.onload = (temp: ProgressEvent) => {
       this.imagePreview = (<FileReader>temp.target).result;
     };
     reader.readAsDataURL(event.target.files[0]);
     this.imageFile = event.target.files[0];
-    // console.log(this.imageFile);
-    // console.log(this.createHash(event.target.files[0]));
+    this.imageType = this.imageFile.type;
+    this.imageName = this.imageFile.name;
   }
 
   async getUploadDetails() {
@@ -70,6 +74,11 @@ export class ReportNewComponent implements OnInit {
     this.getUploadDetails();
     const hash =  this.createHash(this.imageFile);
     const temp = await this.reportService.uploadToB2(this.uploadDetails, this.imageFile, hash);
+    console.log(temp);
+  }
+
+  async uploadImage() {
+    const temp = this.reportService.uploadImageForReport(this.reportID, this.imageType, this.imageName, this.imageFile);
     console.log(temp);
   }
 

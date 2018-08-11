@@ -8,6 +8,14 @@ export interface Report {
   status: string;
   submitterName: string;
   title: string;
+  mediaAttachments: MediaAttachment[];
+}
+
+export interface MediaAttachment {
+  fileId: string;
+  fileName: string;
+  contentType: string;
+  fileSizeBytes: number;
 }
 
 export interface ReportUi {
@@ -20,7 +28,9 @@ export interface ReportUi {
   status: string;
   submitterName: string;
   title: string;
+  mediaAttachments: MediaAttachment[];
   uiDetailsToggle: boolean;
+  numberOfImages: number;
 }
 
 

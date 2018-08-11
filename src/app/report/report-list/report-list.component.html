@@ -2,13 +2,14 @@
   <h2 style="margin-bottom: 0.5em">Reports</h2>
 
 
-  <div class="container-fluid">
+  <div class="container-fluid"  style="padding: 0">
     <div class="row">
       <div class="col-md-9 report-list" style="padding: 0;">
         <div class="row report" *ngFor="let report of reports">
           <div class="media" style="width: 100%">
             <div class="img-container mr-3">
-              <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Generic placeholder image">
+              <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Generic placeholder image" *ngIf="report.numberOfImages == 0">
+              <img src="{{imageURLConfig}}/?fileId={{report.mediaAttachments[0].fileId}}" alt="Generic placeholder image" *ngIf="report.numberOfImages > 0">
               <div class="report-status" [ngClass]="{'status-completed': report.status === COMPLETED, 'status-new': report.status ===  NEW, 'status-ongoing': report.status === ONGOING}">
                 <h6 style="margin:0"> {{report.status }}</h6>
               </div>
@@ -30,7 +31,7 @@
                 <div class="col-md-4 middle-info">
                   <h5 style="margin-bottom: 0">
                     <br> </h5>
-                  <h5 style="margin-bottom: 0; font-weight: 400">3 Media Attachment(s)</h5>
+                  <h5 style="margin-bottom: 0; font-weight: 400">{{report.numberOfImages}} Media Attachment(s)</h5>
                   <h5 style="margin-bottom: 0; font-weight: 400">10 Comments</h5>
                   <h5 style="margin-bottom: 0; font-weight: 400">Last updated: {{report.createdAt | date}}</h5>
                 </div>
@@ -51,7 +52,7 @@
           </div>
           <div class="col-md-12 hidden-details" style="text-align: center; width: 100%;" [hidden]="!report.uiDetailsToggle">
             <div class=" hidden-middle-info">
-              <h5 style="margin-bottom: 0; font-weight: 400">3 Media Attachment(s)</h5>
+              <h5 style="margin-bottom: 0; font-weight: 400">{{report.numberOfImages}} Media Attachment(s)</h5>
               <h5 style="margin-bottom: 0; font-weight: 400">10 Comments</h5>
               <h5 style=" font-weight: 400">Last updated: {{report.createdAt | date}}</h5>
             </div>
@@ -96,36 +97,12 @@
           </li>
         </ul>
         <br>
-        <!--
-        <div class="row report-track-container">
-          <div class="col-xs-12 col-md-12">
-            <div class=" track-new ">
-              <h4>
-                <i class="fa fa-file-text-o status-new" aria-hidden="true"></i> 2
-                <span class="text">New </span>
-              </h4>
-            </div>
-          </div>
-          <div class="col-xs-12 col-md-12">
-            <div class="track-inprogress ">
-              <h4>
-                <i class="fa fa-hourglass-start status-inprogress" aria-hidden="true"></i> 2
-                <span class="text">In progress </span>
-              </h4>
-            </div>
 
-          </div>
-          <div class="col-xs-12 col-md-12">
-            <div class="track-complete ">
-              <h4>
-                <i class="fa fa-check status-completed" aria-hidden="true"></i> 2
-                <span class="text">Completed </span>
-              </h4>
-            </div>
-          </div>
-          -->
-        <button routerLink="/reports/create-new">
-          <i class="fa fa-file-text" aria-hidden="true"></i> Create New Report</button>
+        <button routerLink="/reports/create-new" class="btn btn-primary">
+          <h5>
+            <i class="fa fa-file-text" aria-hidden="true"></i> Create New Report
+        </h5>
+      </button><p></p>
       </div>
 
     </div>
