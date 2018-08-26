@@ -9,7 +9,8 @@ import * as UploadDetailsViewModels from './../services/upload-details.viewmodel
 export class ReportsService {
   ip = 'https://192.168.1.100:5001/';
   heroku = 'https://property-app-back-end.herokuapp.com/api';
-  URL = this.heroku;
+  matt = 'http://property-app-back-end.mattwelke.com/api';
+  URL = this.matt;
 
   reportsChanged = new Subject<ViewModels.Report[]>();
 
