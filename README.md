@@ -13,6 +13,6 @@ Planning to add SaSS compatibility for easy colour changes.
 
 ### Screenshots
 
-![screenhots](https://github.com/egonio/generic-web-dashboard/tree/master/screenshots/reportlist.PNG)
-![screenhots](https://github.com/egonio/generic-web-dashboard/tree/master/screenshots/mobile-list.PNG)
-![screenhots](https://github.com/egonio/generic-web-dashboard/tree/master/screenshots/reportdetails.PNG)
+![screenhots](./screenshots/reportlist.PNG)
+![screenhots](./screenshots/mobile-list.PNG)
+![screenhots](./screenshots/reportdetails.PNG)
