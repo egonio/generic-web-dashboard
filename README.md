@@ -1,27 +1,17 @@
-# PropertyAppFrontend
+# Simple Dashboard 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+A simple web dashboard that runs on Angular 4 and uses Bootstrap, Materials.io
+To check a live version, go to  http://www.simpledashboard.com.s3-website-us-east-1.amazonaws.com
 
-## Development server
+## Still a work in progress
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Will fill up later...
 
-## Code scaffolding
+The idea is for people to use this freely and customize it themselves. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Planning to add SaSS compatibility for easy colour changes.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Screenshots
+[[https://github.com/egonio/generic-web-dashboard/tree/master/screenshots/reportlist.PNG]]
+[[https://github.com/egonio/generic-web-dashboard/tree/master/screenshots/mobile-list.PNG]]
+[[https://github.com/egonio/generic-web-dashboard/tree/master/screenshots/reportdetails.PNG]]
