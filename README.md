@@ -12,6 +12,6 @@ The idea is for people to use this freely and customize it themselves.
 Planning to add SaSS compatibility for easy colour changes.
 
 ### Screenshots
-[[https://github.com/egonio/generic-web-dashboard/tree/master/screenshots/reportlist.PNG]]
-[[https://github.com/egonio/generic-web-dashboard/tree/master/screenshots/mobile-list.PNG]]
-[[https://github.com/egonio/generic-web-dashboard/tree/master/screenshots/reportdetails.PNG]]
+![screenhots] (https://github.com/egonio/generic-web-dashboard/tree/master/screenshots/reportlist.PNG)
+![screenhots] (https://github.com/egonio/generic-web-dashboard/tree/master/screenshots/mobile-list.PNG)
+![screenhots] (https://github.com/egonio/generic-web-dashboard/tree/master/screenshots/reportdetails.PNG)
