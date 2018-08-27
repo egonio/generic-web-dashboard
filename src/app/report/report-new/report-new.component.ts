@@ -35,15 +35,13 @@ export class ReportNewComponent implements OnInit {
       email: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required)
     });
-    //this.getUploadDetails();
+    // this.getUploadDetails();
   }
 
   async createNewReport() {
     try {
       this.newReport = this.newReportForm.value;
       this.newReport.status = 'NEW';
-      const temp = await this.reportService.createNewReport(this.newReport) as { newId: string };
-      this.reportID = temp.newId;
       this.newReportForm.reset();
       console.log(this.reportID);
     } catch (error) {}
@@ -70,12 +68,7 @@ export class ReportNewComponent implements OnInit {
     return sha1(file);
   }
 
-  async uploadToB2() {
-    this.getUploadDetails();
-    const hash =  this.createHash(this.imageFile);
-    const temp = await this.reportService.uploadToB2(this.uploadDetails, this.imageFile, hash);
-    console.log(temp);
-  }
+
 
   async uploadImage() {
     const temp = this.reportService.uploadImageForReport(this.reportID, this.imageType, this.imageName, this.imageFile);

@@ -7,15 +7,11 @@ import * as UploadDetailsViewModels from './../services/upload-details.viewmodel
 
 @Injectable()
 export class ReportsService {
-  ip = 'https://192.168.1.100:5001/';
-  heroku = 'https://property-app-back-end.herokuapp.com/api';
-  matt = 'http://property-app-back-end.mattwelke.com/api';
-  URL = this.matt;
 
   reportsChanged = new Subject<ViewModels.Report[]>();
 
   private reports: ViewModels.Report[];
-  /*
+
   private mockReports: ViewModels.Report[] = [
     {
       id: '1',
@@ -27,11 +23,12 @@ export class ReportsService {
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc omni virtuti vitium contrario nomine opponitur. Tamen a proposito, inquam, aberramus. Sin laboramus, quisest, qui alienae modum statuat industriae? Itaque nostrum est-quod nostrum dico, artis est-ad ea principia,quae accepimus. Duo Reges: constructio interrete. Quis animo aequo videt eum, quem inpure ac flagitiose putet vivere?',
       status: 'NEW',
-      createdAt: new Date()
+      createdAt: new Date(),
+      mediaAttachments: []
     },
     {
       id: '2',
-      title: "Loud Neighbors, can't sleep",
+      title: 'Loud Neighbors, can\'t sleep',
       submitterName: 'Kersten Chernerwerth',
       apartment: '14G',
       phoneNumber: '987-654-3210',
@@ -39,7 +36,8 @@ export class ReportsService {
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc omni virtuti vitium contrario nomine opponitur. Tamen a proposito, inquam, aberramus. Sin laboramus, quisest, qui alienae modum statuat industriae? Itaque nostrum est-quod nostrum dico, artis est-ad ea principia,quae accepimus. Duo Reges: constructio interrete. Quis animo aequo videt eum, quem inpure ac flagitiose putet vivere?',
       status: 'NEW',
-      createdAt: new Date()
+      createdAt: new Date(),
+      mediaAttachments: []
     },
     {
       id: '3',
@@ -51,7 +49,8 @@ export class ReportsService {
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc omni virtuti vitium contrario nomine opponitur. Tamen a proposito, inquam, aberramus. Sin laboramus, quisest, qui alienae modum statuat industriae? Itaque nostrum est-quod nostrum dico, artis est-ad ea principia,quae accepimus. Duo Reges: constructio interrete. Quis animo aequo videt eum, quem inpure ac flagitiose putet vivere?',
       status: 'ONGOING',
-      createdAt: new Date()
+      createdAt: new Date(),
+      mediaAttachments: []
     },
     {
       id: '4',
@@ -63,7 +62,8 @@ export class ReportsService {
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc omni virtuti vitium contrario nomine opponitur. Tamen a proposito, inquam, aberramus. Sin laboramus, quisest, qui alienae modum statuat industriae? Itaque nostrum est-quod nostrum dico, artis est-ad ea principia,quae accepimus. Duo Reges: constructio interrete. Quis animo aequo videt eum, quem inpure ac flagitiose putet vivere?',
       status: 'ONGOING',
-      createdAt: new Date()
+      createdAt: new Date(),
+      mediaAttachments: []
     },
     {
       id: '5',
@@ -75,7 +75,8 @@ export class ReportsService {
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc omni virtuti vitium contrario nomine opponitur. Tamen a proposito, inquam, aberramus. Sin laboramus, quisest, qui alienae modum statuat industriae? Itaque nostrum est-quod nostrum dico, artis est-ad ea principia,quae accepimus. Duo Reges: constructio interrete. Quis animo aequo videt eum, quem inpure ac flagitiose putet vivere?',
       status: 'COMPLETED',
-      createdAt: new Date()
+      createdAt: new Date(),
+      mediaAttachments: []
     },
     {
       id: '6',
@@ -87,79 +88,51 @@ export class ReportsService {
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc omni virtuti vitium contrario nomine opponitur. Tamen a proposito, inquam, aberramus. Sin laboramus, quisest, qui alienae modum statuat industriae? Itaque nostrum est-quod nostrum dico, artis est-ad ea principia,quae accepimus. Duo Reges: constructio interrete. Quis animo aequo videt eum, quem inpure ac flagitiose putet vivere?',
       status: 'COMPLETED',
-      createdAt: new Date()
+      createdAt: new Date(),
+      mediaAttachments: []
     }
   ];
- */
+
   constructor(private http: HttpClient) {}
 
   private async getReportsHTTP() {
-    function deserializeReport(report: ViewModels.Report) {
-      const r = { ...report };
 
-      r.createdAt = new Date(report.createdAt as any);
-
-      return r;
-    }
-    return (await this.http
-      .get<ViewModels.Report[]>(this.URL + '/reports')
-      .toPromise()).map(deserializeReport);
   }
 
 
-  async getReport(id: string): Promise<ViewModels.Report> {
-    /*
+  async getReport(id: string) {
+
     const temp = await this.mockReports.find(element => {
       return element.id === id;
     });
-    */
+    return temp;
+   /*
     const temp = await this.http
       .get<ViewModels.Report>(this.URL + '/reports/' + id)
       .toPromise();
     return temp;
+    */
   }
 
   async getReports() {
-    /*
+
     // Mock Reports
     this.reportsChanged.next(this.mockReports);
-    */
+    /*
     try {
       this.reports = await this.getReportsHTTP();
       this.reportsChanged.next(this.reports);
     } catch (error) {
       console.log(error);
     }
+    */
   }
+
 
   async createNewReport(newReport: ViewModels.CreateReport) {
-    const temp = await this.http
-      .post(this.URL + '/reports', newReport)
-      .toPromise();
-    await this.getReports();
-    return temp;
+    console.log('create new report');
   }
 
-  async uploadToB2(
-    uploadDetails: UploadDetailsViewModels.UploadDetails,
-    imageFile: any,
-    hash: any
-  ) {
-    return this.http
-      .post(
-        'https://property-app-b2-emulator.herokuapp.com/api/b2_upload_file',
-        imageFile,
-        {
-          headers: new HttpHeaders({
-            'Content-Type': 'image/png',
-            Authorization: uploadDetails.authorizationToken,
-            'X-Bz-File-Name': imageFile.name,
-            'X-Bz-Content-Sha1': hash
-          })
-        }
-      )
-      .toPromise();
-  }
 
   async uploadImageForReport(
     id: string,
@@ -167,18 +140,11 @@ export class ReportsService {
     imageName: string,
     imageFile: any
   ) {
-    return this.http
-      .post(this.URL + '/reports/' + id + '/media-attachments', imageFile, {
-        headers: new HttpHeaders({
-          'Content-Type': type,
-          'x-pa-file-name': imageName
-        })
-      })
-      .toPromise();
+    return null;
   }
 
   async getConfig() {
-    return await this.http.get(this.URL + '/config').toPromise() as { b2ApiDownloadFileByIdBaseUrl: string };
+    return null;
   }
 
   /*
